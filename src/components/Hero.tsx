@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { siteData } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -21,20 +22,27 @@ export default function Hero() {
       <div className="relative z-10 px-6 max-w-3xl">
 
         <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-          Transformá tu cuerpo en 90 días
+          {siteData.hero.title}
         </h1>
 
         <p className="text-lg md:text-xl mb-8 text-gray-200">
-          Entrenamiento personalizado de CrossFit para resultados reales
+          {siteData.hero.subtitle}
+          {/* Entrenamiento personalizado de CrossFit para resultados reales */}
         </p>
 
         <a
-          href="https://wa.me/549XXXXXXXXXX"
+          href={`https://wa.me/${siteData.hero.whatsapp}?text=Hola%20quiero%20info`}
           target="_blank"
-          className="bg-red-500 hover:bg-red-600 transition px-8 py-4 rounded-xl font-semibold text-lg"
+          // className="bg-red-500 hover:bg-red-600 transition px-8 py-4 rounded-xl font-semibold text-lg"
+          className="bg-green-500 hover:bg-red-600 transition px-8 py-4 rounded-xl font-semibold text-lg"
         >
-          Reservar clase gratis
+          
+          Reservar clase gratis 
         </a>
+
+
+
+        
 
       </div>
     </section>
